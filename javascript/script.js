@@ -40,9 +40,9 @@ console.log(typeof surname);
 
 // muitos dados em javascript são considerado objetos, null é um deles
 
-let undefined // undefined
-console.log(undefined);
-console.log(typeof undefined);
+let typeUndefined // undefined
+console.log(typeUndefined);
+console.log(typeof typeUndefined);
 
 const languages = ['Javascript', 'C#', 'Python']; // arrays
 console.log(languages);
@@ -55,6 +55,21 @@ const user = { //object
   password: 'P@ssw0rd', 
   username: 'felipepoletti', 
   age: 22
-}
+};
 console.log(user);
 console.log(typeof user);
+
+// métodos de string
+const fullname = 'Felipe Poletti Garcia';
+
+const stringToArray = fullname.split(' '); // separa o texto e coloca em uma lista, o separador foi o espaço em branco
+
+console.log(fullname.length); // contar caracteres
+
+console.log(fullname.toLowerCase); // deixa todo texto em letra minúscula
+
+console.log(fullname.toUpperCase); // deixa todo texto em letra maiúscula
+
+console.log(fullname.indexOf('Poletti')); // retorna a posição em que o elemento está na string 
+
+console.log(fullname.slice(0, 5)); // Extrai a string de acordo com a posição passada por parâmetro 
