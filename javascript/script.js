@@ -73,3 +73,25 @@ console.log(fullname.toUpperCase); // deixa todo texto em letra maiúscula
 console.log(fullname.indexOf('Poletti')); // retorna a posição em que o elemento está na string 
 
 console.log(fullname.slice(0, 5)); // Extrai a string de acordo com a posição passada por parâmetro 
+
+// métodos de array
+const list = ['a', 'b', 'c', 'd', 'e']; 
+/* quando criado uma lista como const, é possível atribuir mais valores a ela. 
+o que não pode seria transformar uma lista em object por exemplo */
+
+console.log(list.length); // conta o numero de elementos
+
+console.log(list[2]); // acessar uma posição da lista
+
+list[5] = 'f'; // atribuir mais um item na lista
+console.log(list);
+
+console.log(list[list.length - 1]); // obter o ultimo elemento da lista
+
+list.push('g'); // adiciona um elemento ao fim da lista
+
+list.pop(); // remove o ultimo elemento da lista
+
+list.shift(); // remove o primeiro elemento
+
+list.unshift('a'); // adiciona um elemento no inicio da lista
