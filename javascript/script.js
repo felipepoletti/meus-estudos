@@ -142,3 +142,97 @@ console.log(obj);
   As aspas devem ser DUPLAS
 */
 
+// Estruturas condicionais
+const a = 10;
+
+if (a > 8) {
+  console.log('A é maior que 8');
+};
+
+const b = 'Felipe';
+
+// o === valida se o valor & tipo são iguais
+
+if (b === 'João') {
+  console.log('O nome é João');
+}
+else if (b === 'Pedro')
+{
+  console.log('O nome é Pedro');
+}
+else {
+  console.log('O nome não foi encontrado.');
+};
+
+const someNumber = 14;
+
+// if ternário
+let testingANumber = someNumber < 20 ? 'Yes' : 'No'; // if ? se true retorna : else
+
+// Estruturas de repetição
+const myList = [1, 2, 3, 4, 5];
+let counter = 0;
+
+while(counter < myList.length) {
+  console.log(myList[counter])
+  counter++;
+}
+
+for(let counter = 0; counter < myList.length; counter++) {
+  console.log(`Imprimindo: ${myList[counter]}`);
+}
+
+// métodos de array em repetição
+const names = ['Matheus', 'Felipe', 'Dimitri', 'Eric'];
+
+names.forEach(function(name) {
+  console.log(`O nome é: ${name}`);
+});
+
+const modifiedNames = names.map(function (name) {
+  if (name === 'Felipe') {
+    return name = 'Felipe Poletti';
+  } else {
+    return name;
+  }
+});
+
+console.log(modifiedNames);
+
+const bigNumbers = [1, 2, 3, 4, 5, 10, 100].filter(function (number) {
+  return number >= 5;
+});
+
+console.log(bigNumbers);
+
+const sumAll = [10, 20, 30, 40, 50].reduce(function (total, number) {
+  return total + number;
+});
+
+console.log(sumAll);
+
+// funções
+function myFunction() {
+  console.log('Hello World!');
+} 
+
+myFunction();
+
+function nomeCompleto(nome, sobrenome) {
+  return `O nome completo é: ${nome} ${sobrenome}`;
+}
+
+console.log(nomeCompleto('Felipe', 'Poletti'));
+
+// arrow function
+const myArrowFunction = (a, b) => {
+  return a + b;
+};
+
+console.log(myArrowFunction(6, 7));
+
+// geralmente se usa arrow function para operaçoes rapidas
+
+const mySimpleArrowFunction = (a, b) => a + b;
+
+console.log(mySimpleArrowFunction(5, 5));
