@@ -95,3 +95,16 @@ list.pop(); // remove o ultimo elemento da lista
 list.shift(); // remove o primeiro elemento
 
 list.unshift('a'); // adiciona um elemento no inicio da lista
+
+// objetos
+const product = {
+  name: 'Camisa',
+  price: 15.99,
+  inStock: true,
+  sizes: ['P', 'M', 'G'],
+  'Main color': 'Blue', 
+};
+
+console.log(product.name); // acessando um elemento do objeto
+
+console.log(product['Main color']); // outra forma de acessar elementos do objeto
