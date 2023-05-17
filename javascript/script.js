@@ -107,4 +107,38 @@ const product = {
 
 console.log(product.name); // acessando um elemento do objeto
 
-console.log(product['Main color']); // outra forma de acessar elementos do objeto
+console.log(product['Main color']); // outra forma de acessar elementos do objeto. não muito utilizado
+
+// destructuring (arrays e objetos)
+const {price, inStock} = product;
+
+/* ao invés de:
+  const price = product.price;
+  const inStock = product.inStock;
+*/
+
+console.log(price);
+console.log(inStock);
+
+const [n1, n2] = list;
+
+console.log(n1);
+console.log(n2);
+
+// JSON - Javascript Object Notation
+const dog = {
+  name: 'Dwight',
+  age: 10
+};
+
+const json = JSON.stringify(dog); // converte o objeto para json
+console.log(json);
+
+const obj = JSON.parse(json); // converte o JSON para um objeto javascript
+console.log(obj);
+
+/* Regras JSON
+  Deve ser envolvido por chaves,
+  As aspas devem ser DUPLAS
+*/
+
