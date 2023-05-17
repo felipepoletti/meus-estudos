@@ -236,3 +236,39 @@ console.log(myArrowFunction(6, 7));
 const mySimpleArrowFunction = (a, b) => a + b;
 
 console.log(mySimpleArrowFunction(5, 5));
+
+// classes
+class Product {
+  constructor(productName, price) {
+    this.productName = productName;
+    this.price = price;
+  }
+
+  productDetails() {
+    return `O produto ${this.productName} custa R$ ${this.price}.`;
+  }
+}
+
+const shirt = new Product('Camisa do Inter', 199.99);
+const coat = new Product('Casaco do Inter', 399.99);
+
+console.log(shirt.productDetails());
+
+// herança
+class SuperProduct extends Product {
+  constructor(name, price, size) {
+    super(name, price);
+    this.size = size;
+  }
+
+  // static
+  static sayHello() {
+    console.log('Hello');
+  }
+}
+
+const tenis = new SuperProduct('Tênis Vans Old School', 399.99, 42);
+
+console.log(tenis);
+// usa quando precisa apenas de alguns métodos da classe, e não de um objeto
+SuperProduct.sayHello();
