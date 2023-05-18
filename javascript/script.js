@@ -272,3 +272,42 @@ const tenis = new SuperProduct('Tênis Vans Old School', 399.99, 42);
 console.log(tenis);
 // usa quando precisa apenas de alguns métodos da classe, e não de um objeto
 SuperProduct.sayHello();
+
+
+// DOM - document object model
+const title = document.getElementById("title");
+console.log(title);
+
+// query selector (usado atualmente)
+const sameTitle = document.querySelector("#title");
+console.log(sameTitle);
+
+// seleciona todos elementos
+const texts = document.querySelectorAll('.text');
+console.log(texts);
+console.log(texts[1]);
+
+texts.forEach((text) => {
+  console.log(text.textContent);
+});
+
+// manipulação de elementos
+title.textContent = 'Resumão de javascript'; // modificando o texyo
+
+texts[0].innerHTML = '<span>Alterando o elemento HTML</span>'; // modificando o html do elemento
+
+texts[1].style.color = 'red'; // modificando o estilo do elemento
+
+texts[2].classList.add('my-class'); // adiciona uma class ao elemento
+
+texts[2].classList.remove('text'); // remove uma class do elemento
+
+texts[3].remove(); // remove um elemento do html
+
+// Eventos
+const btn = document.querySelector("#btn");
+
+btn.addEventListener("click", function() {
+  console.log("Clicou");
+  texts[2].style.color = 'green';
+})
