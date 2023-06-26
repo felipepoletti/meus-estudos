@@ -29,6 +29,21 @@
       "name": "Boné",
       "price": "30.00",
       "id": 6
+    },
+    {
+      "name": "Cueca",
+      "price": "22.90",
+      "id": 7
+    },
+    {
+      "name": "Camisa",
+      "price": "112.99",
+      "id": 8
+    },
+    {
+      "name": "Camisa Polo",
+      "price": "79.90",
+      "id": 9
     }
   ]
 }

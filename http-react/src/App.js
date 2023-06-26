@@ -27,7 +27,7 @@ function App() {
       price
     };
 
-    const res = await fetch(url, {
+    const res =  await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -35,7 +35,11 @@ function App() {
       body: JSON.stringify(product)
     });
 
-    console.log(product);
+    const addedProducts = await res.json();
+
+    setProducts((prevProducts) => [...prevProducts, addedProducts]);
+    setName("");
+    setPrice("");
   };
 
   return (
