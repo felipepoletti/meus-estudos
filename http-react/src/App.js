@@ -9,7 +9,7 @@ const url = "http://localhost:3000/products";
 function App() {
   const [products, setProducts] = useState([]);
 
-  const { data: items } = useFecth(url);
+  const { data: items, httpConfig } = useFecth(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -32,17 +32,20 @@ function App() {
       price
     };
 
-    const res =  await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product)
-    });
+    // const res =  await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(product)
+    // });
 
-    const addedProducts = await res.json();
+    // const addedProducts = await res.json();
 
-    setProducts((prevProducts) => [...prevProducts, addedProducts]);
+    // setProducts((prevProducts) => [...prevProducts, addedProducts]);
+
+    httpConfig(product, "POST");
+
     setName("");
     setPrice("");
   };
