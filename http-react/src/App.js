@@ -9,7 +9,7 @@ const url = "http://localhost:3000/products";
 function App() {
   const [products, setProducts] = useState([]);
 
-  const { data: items, httpConfig } = useFecth(url);
+  const { data: items, httpConfig, loading } = useFecth(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -53,11 +53,13 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
+      {loading && <p>Carregando produtos...</p>}
+      {!loading && 
       <ul>
         {items && items.map((product) => (
           <li key={product.id}>{product.name} - R${product.price}</li>
         ))}
-      </ul>
+      </ul>}
       <div className="add-product">
         <form onSubmit={handleSubmit}>
           <label>
@@ -78,7 +80,8 @@ function App() {
               onChange={(e) => setPrice(e.target.value)}
             />
           </label>
-          <input type="submit" value="Enviar" />
+          {loading && <input type="submit" disabled value="Aguarde" />}
+          {!loading && <input type="submit" value="Enviar" />}
         </form>
       </div>
     </div>

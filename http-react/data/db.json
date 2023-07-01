@@ -51,9 +51,44 @@
       "id": 10
     },
     {
-      "name": "Vestido",
-      "price": "220.90",
-      "id": 11
+      "name": "Sunga",
+      "price": "30.00",
+      "id": 12
+    },
+    {
+      "name": "Biquini",
+      "price": "79.90",
+      "id": 15
+    },
+    {
+      "name": "Camisa de time",
+      "price": "279.90",
+      "id": 16
+    },
+    {
+      "name": "Perfume",
+      "price": "700.00",
+      "id": 17
+    },
+    {
+      "name": "Brinco",
+      "price": "70.00",
+      "id": 18
+    },
+    {
+      "name": "Colar",
+      "price": "50.00",
+      "id": 19
+    },
+    {
+      "name": "Colar",
+      "price": "50.00",
+      "id": 20
+    },
+    {
+      "name": "Meia desenho",
+      "price": "9.90",
+      "id": 21
     }
   ]
 }
