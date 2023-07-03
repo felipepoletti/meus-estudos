@@ -9,7 +9,7 @@ const url = "http://localhost:3000/products";
 function App() {
   const [products, setProducts] = useState([]);
 
-  const { data: items, httpConfig, loading } = useFecth(url);
+  const { data: items, httpConfig, loading, error } = useFecth(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -54,6 +54,7 @@ function App() {
     <div className="App">
       <h1>Lista de produtos</h1>
       {loading && <p>Carregando produtos...</p>}
+      {error && <p>{error}</p>}
       {!loading && 
       <ul>
         {items && items.map((product) => (

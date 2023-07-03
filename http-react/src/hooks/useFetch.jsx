@@ -8,6 +8,8 @@ export const useFecth = (url) => {
   const [callFetch, setCallFetch] = useState(null);
 
   const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState(null);
   
   // refatorando o Post
   const httpConfig = (data, method) => {
@@ -28,11 +30,16 @@ export const useFecth = (url) => {
     const fetchData = async () => {
       setLoading(true);
 
-      const resp = await fetch(url);
+      try {
+        const resp = await fetch(url);
 
-      const json = await resp.json();
+        const json = await resp.json();
 
-      setData(json);
+        setData(json);
+      } catch(error) {
+        console.log(error.message);
+        setError("Houve algum erro ao carregar os dados.");
+      };
       
       setLoading(false);
     }
@@ -54,5 +61,5 @@ export const useFecth = (url) => {
     httpRequest();
   }, [config, method, url])
 
-  return { data, httpConfig, loading };
+  return { data, httpConfig, loading, error };
 };
