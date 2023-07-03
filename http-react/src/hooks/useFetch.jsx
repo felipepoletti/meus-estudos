@@ -10,6 +10,8 @@ export const useFecth = (url) => {
   const [loading, setLoading] = useState(false);
 
   const [error, setError] = useState(null);
+
+  const [itemId, setItemId] = useState(null);
   
   // refatorando o Post
   const httpConfig = (data, method) => {
@@ -23,6 +25,16 @@ export const useFecth = (url) => {
       });
 
       setMethod(method);
+    } else if (method === "DELETE") {
+      setConfig({
+        method,
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
+
+      setMethod(method);
+      setItemId(data);
     }
   };
 
@@ -54,6 +66,14 @@ export const useFecth = (url) => {
         const res = await fetch(...fetchOptions);
         const json = await res.json();
   
+        setCallFetch(json);
+      } else if (method === "DELETE") {
+        const deleteUrl = `${url}/${itemId}`;
+
+        const res = await fetch(deleteUrl, config);
+
+        const json = await res.json();
+
         setCallFetch(json);
       }
     };
